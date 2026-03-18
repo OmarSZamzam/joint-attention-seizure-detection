@@ -10,10 +10,6 @@ venv/
 .pytest_cache/
 .mypy_cache/
 
-# Large checkpoints (keep model_weights/README.md tracked)
-model_weights/*.pt
-model_weights/*.pth
-
 # Editor / OS
 .idea/
 .vscode/
