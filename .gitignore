@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+.env
+.DS_Store
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Large checkpoints (keep model_weights/README.md tracked)
+model_weights/*.pt
+model_weights/*.pth
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+*~
