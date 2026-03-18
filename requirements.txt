@@ -1,0 +1,11 @@
+torch
+torchvision
+torchaudio
+transformers
+peft
+numpy
+pandas
+opencv-python
+tqdm
+matplotlib
+
