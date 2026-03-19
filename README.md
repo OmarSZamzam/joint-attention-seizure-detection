@@ -5,7 +5,7 @@ Learning Cross-Joint Attention for Generalizable Video-Based Seizure Detection
 Generalizable Video-Based Seizure Detection*.
 
 This repository provides a documented Python implementation of a pose-aware
-ViViT-based seizure classifier with cross-joint attention.
+Video Vision Transformer (ViViT)-based seizure classifier with cross-joint attention.
 
 ![Method diagram](Method_Diagram.png)
 
