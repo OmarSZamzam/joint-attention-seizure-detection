@@ -47,6 +47,8 @@ Create a fresh environment (conda or venv) and install the dependencies:
 ```bash
 # install pip inside the conda enviroment
 conda install pip
+# ensure it points to the conda environment 
+which pip
 # install the dependencies
 pip install -r requirements.txt
 ```
