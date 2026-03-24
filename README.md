@@ -74,8 +74,7 @@ Dataset preparation
 **Training data.** The models in this repository were trained on epileptic
 monitoring unit video from **WU-SAHZU-EMU-Video**, hosted on Hugging Face:
 [xuyankun/WU-SAHZU-EMU-Video](https://huggingface.co/datasets/xuyankun/WU-SAHZU-EMU-Video).
-That release accompanies the VSViG work (ECCV 2024); see **Data attribution
-and citation** below. The Hugging Face dataset card explains how videos are
+That release accompanies the VSViG work (ECCV 2024). The Hugging Face dataset card explains how videos are
 released (including privacy masking). Download the data separately, run your
 own preprocessing, and build a clip-level CSV in the format this code expects.
 
@@ -99,29 +98,6 @@ build the table from source videos, e.g. WU-SAHZU-style preprocessing):
 
 Constructing the full table from your dataset’s labels is left to
 dataset-specific code outside this package.
-
-
-Data attribution and citation
------------------------------
-
-If you use WU-SAHZU-EMU-Video or follow its labeling conventions, cite the
-VSViG paper:
-
-Xu, Y., Wang, J., Chen, Y.-H., Yang, J., Ming, W., Wang, S., & Sawan, M. (2024).
-VSViG: Real-time video-based seizure detection via skeleton-based spatiotemporal ViG.
-In *Proceedings of the European Conference on Computer Vision* (pp. 228–245).
-Springer.
-
-```bibtex
-@inproceedings{xu2024vsvig,
-  title         = {{VSViG}: Real-time video-based seizure detection via skeleton-based spatiotemporal {ViG}}},
-  author        = {Xu, Yankun and Wang, Junzhe and Chen, Yun-Hsuan and Yang, Jie and Ming, Wenjie and Wang, Shuang and Sawan, Mohamad},
-  booktitle     = {Proceedings of the European Conference on Computer Vision},
-  pages         = {228--245},
-  year          = {2024},
-  publisher     = {Springer}
-}
-```
 
 
 Frozen ViViT + joint-attention classifier
