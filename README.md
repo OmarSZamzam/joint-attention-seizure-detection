@@ -36,6 +36,8 @@ Package layout
   finetuning ViViT with LoRA.
 - `model_weights/`: `pose.pth` and released frozen-ViViT classifier `.pt` files
   (with / without positional embedding; see `model_weights/README.md`).
+- `clips_df_example.csv`: toy clip manifest showing the CSV columns used in
+  training (dummy paths and values only).
 - `requirements.txt`: core Python dependencies.
 
 
@@ -69,10 +71,19 @@ root). See **`model_weights/README.md`** for the classifier checkpoint format
 Dataset preparation
 -------------------
 
-This code expects a
-clip-level dataframe (CSV) describing fixed-length segments (typically 5 s).
+**Training data.** The models in this repository were trained on epileptic
+monitoring unit video from **WU-SAHZU-EMU-Video**, hosted on Hugging Face:
+[xuyankun/WU-SAHZU-EMU-Video](https://huggingface.co/datasets/xuyankun/WU-SAHZU-EMU-Video).
+That release accompanies the VSViG work (ECCV 2024); see **Data attribution
+and citation** below. The Hugging Face dataset card explains how videos are
+released (including privacy masking). Download the data separately, run your
+own preprocessing, and build a clip-level CSV in the format this code expects.
 
-Both training scripts take `--clips_csv` with at least:
+This code expects a clip-level dataframe (CSV) describing fixed-length segments
+(typically 5 s). See **`clips_df_example.csv`** for a small illustration of the
+schema (dummy paths and timestamps only).
+
+**Required columns** for `--clips_csv` (used by the training scripts):
 
 - `patient_id`: patient identifier (patient-wise splitting).
 - `phase`: e.g. `interictal`, `transition`, `ictal` (only `interictal` and
@@ -80,8 +91,37 @@ Both training scripts take `--clips_csv` with at least:
 - `video_path`: absolute or repo-relative path to the video file.
 - `clip_start_s`, `clip_end_s`: clip start/end time in seconds.
 
-Constructing that table from clinical labels or spreadsheets is left to
-dataset-specific preprocessing outside this package.
+**Optional extra columns** (ignored by `seizure_classifier` but useful when you
+build the table from source videos, e.g. WU-SAHZU-style preprocessing):
+
+- `seizure_id`, `clip_start`, `clip_end`, `eeg_onset`, `clinical_onset` (human-readable times),
+  `eeg_onset_s`, `clinical_onset_s`, `video_duration_s`.
+
+Constructing the full table from your dataset’s labels is left to
+dataset-specific code outside this package.
+
+
+Data attribution and citation
+-----------------------------
+
+If you use WU-SAHZU-EMU-Video or follow its labeling conventions, cite the
+VSViG paper:
+
+Xu, Y., Wang, J., Chen, Y.-H., Yang, J., Ming, W., Wang, S., & Sawan, M. (2024).
+VSViG: Real-time video-based seizure detection via skeleton-based spatiotemporal ViG.
+In *Proceedings of the European Conference on Computer Vision* (pp. 228–245).
+Springer.
+
+```bibtex
+@inproceedings{xu2024vsvig,
+  title         = {{VSViG}: Real-time video-based seizure detection via skeleton-based spatiotemporal {ViG}}},
+  author        = {Xu, Yankun and Wang, Junzhe and Chen, Yun-Hsuan and Yang, Jie and Ming, Wenjie and Wang, Shuang and Sawan, Mohamad},
+  booktitle     = {Proceedings of the European Conference on Computer Vision},
+  pages         = {228--245},
+  year          = {2024},
+  publisher     = {Springer}
+}
+```
 
 
 Frozen ViViT + joint-attention classifier

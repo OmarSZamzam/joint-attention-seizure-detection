@@ -1,0 +1,6 @@
+patient_id,seizure_id,phase,clip_start,clip_end,eeg_onset,clinical_onset,video_path,clip_start_s,clip_end_s,eeg_onset_s,clinical_onset_s,video_duration_s
+P001,Sz01,interictal,01:00:00,01:00:05,00:59:30,00:59:45,/data/example_videos/patient_001/session_day1.mp4,3600.0,3605.0,3570.0,3585.0,7200.0
+P001,Sz01,interictal,01:05:00,01:05:05,00:59:30,00:59:45,/data/example_videos/patient_001/session_day1.mp4,3900.0,3905.0,3570.0,3585.0,7200.0
+P001,Sz02,ictal,02:10:00,02:10:05,02:09:50,02:10:00,/data/example_videos/patient_001/seizure_clip.mp4,7800.0,7805.0,7790.0,7800.0,9000.0
+P002,Sz01,interictal,00:30:00,00:30:05,00:29:00,00:29:20,/data/example_videos/patient_002/baseline.mp4,1800.0,1805.0,1740.0,1760.0,5400.0
+P002,Sz01,ictal,01:45:10,01:45:15,01:45:00,01:45:10,/data/example_videos/patient_002/baseline.mp4,6310.0,6315.0,6300.0,6310.0,5400.0

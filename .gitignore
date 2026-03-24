@@ -10,6 +10,9 @@ venv/
 .pytest_cache/
 .mypy_cache/
 
+# Local training manifests (may contain real paths / identifiers)
+clips_df.csv
+
 # Editor / OS
 .idea/
 .vscode/
