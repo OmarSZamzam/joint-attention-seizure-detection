@@ -1,8 +1,9 @@
 Learning Cross-Joint Attention for Generalizable Video-Based Seizure Detection
 =============================================================================
 
-**Official implementation** of the paper *Learning Cross-Joint Attention for
-Generalizable Video-Based Seizure Detection*.
+**Official implementation** of [*Learning Cross-Joint Attention for
+Generalizable Video-Based Seizure Detection*](https://arxiv.org/abs/2603.23757)
+(arXiv:2603.23757).
 
 This repository provides a documented Python implementation of a pose-aware
 Video Vision Transformer (ViViT)-based seizure classifier with cross-joint attention.
@@ -173,6 +174,26 @@ The script:
   classifier.
 
 Best checkpoint: `vivit_lora_joint_clf_best.pt` under `--cache_dir`.
+
+
+Citing this repository / the paper
+-----------------------------------
+
+If you use this code or the method in your research, please cite the paper:
+
+Zamzam, O., Medani, T., Chinara, C., & Leahy, R. (2026). Learning cross-joint
+attention for generalizable video-based seizure detection. *arXiv preprint*
+arXiv:2603.23757. [https://arxiv.org/abs/2603.23757](https://arxiv.org/abs/2603.23757)
+
+```bibtex
+@article{zamzam2026learning,
+  title   = {Learning Cross-Joint Attention for Generalizable Video-Based Seizure Detection},
+  author  = {Zamzam, Omar and Medani, Takfarinas and Chinara, Chinmay and Leahy, Richard},
+  journal = {arXiv preprint arXiv:2603.23757},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2603.23757}
+}
+```
 
 
 Reproducibility notes
